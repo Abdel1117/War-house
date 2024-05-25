@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { ThemeButton } from "../ThemeButton/ThemeButton"
 const Header = () => {
   const [toogle, setToogle] = useState<boolean>(false)
 
@@ -63,7 +64,7 @@ const Header = () => {
           {/* End of user Icon */}
         </div>
       </div>
-
+      <ThemeButton/>
       {/*  */}
     {/* Message Notification */}
 
