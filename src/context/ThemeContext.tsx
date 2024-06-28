@@ -26,7 +26,6 @@ export const ThemeProvider = ({ children }: MyComponentsProps ) : JSX.Element =>
 
      const toggleTheme = () => {
         const newTheme : string = theme === "light" ? "dark" : "light"; 
-        console.log(`The new theme is ${newTheme}`)
         localStorage.setItem("theme", newTheme)
         setTheme(newTheme)
     }

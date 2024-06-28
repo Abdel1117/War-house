@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
@@ -10,8 +10,8 @@ export default defineConfig({
     // https://vitest.dev/config/
     globals: true,
     environment: 'happy-dom',
-    setupFiles: ['test/vitest.setup.js'],
-    include: ['__tests__/**/*.[jt]s?(x)'],
+    setupFiles: ['./src/test/vitest.setup.tsx'],
+    include: ['./src/__tests__/**/*.[jt]s?(x)'],
     exclude: ['**/node_modules/**', '**/dist/**', 'src/test/vitest.setup.js'],
     coverage: {
       provider: 'istanbul',

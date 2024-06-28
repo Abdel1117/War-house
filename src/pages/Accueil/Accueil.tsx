@@ -1,16 +1,23 @@
-import { useAppSelector } from '../../app/hooks'
-import BouttonBox from '../../components/ButtonBox/BouttonBox'
-
+import { Block } from "../../components/Block/Block"
+import Wargame from "../../assets/images/Wargame.jpg"
+import { Carousel } from "../../components/Carousel/Carousel"
 const Accueil = () => {
-
-  const count = useAppSelector((state) => state.counter.value)
- 
+  const myFunction = () => {
+    console.log("Hello")
+  }
   return (
-    <div className=''>
-      <p className='text-2xl'>Accueil</p>
-        <p className='text-xl text-center'>{count}</p>
-        <BouttonBox />
-      </div>
+    <section data-testid="HomeApp"  className=''>
+      <Carousel />
+      <Block 
+          image={Wargame} 
+          textAlt={"Mon image"}
+          title={"Notre site"}
+          text={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quibusdam quia, architecto similique alias, harum debitis non tempora porro asperiores explicabo vel recusandae voluptates dignissimos mollitia saepe sequi tempore quos hic? Asliquid, consequuntur? Laborum quos eius ipsa ea consequuntur repudiandae."}
+          callToActionMessage={"Cliquer ici"}
+          actionButton={myFunction} 
+      />
+     
+      </section>
   )
 }
 
