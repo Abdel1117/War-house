@@ -36,7 +36,7 @@ export const Carousel = () => {
         className="mySwiper"
       >
         <SwiperSlide><img  src="https://c.wallhere.com/photos/e3/e1/movie_poster_George_Spigot_Spigot_Total_Recall-1879095.jpg!d" alt="" /></SwiperSlide>
-        <SwiperSlide><img  src="https://uhdwallpapers.org/download/the-cat-and-the-butterfly_477645/1920x1080/" alt="" /></SwiperSlide>
+        <SwiperSlide><img  src="https://i.redd.it/j3x5jov4nt971.png" alt="" /></SwiperSlide>
         <SwiperSlide><img  src="https://uhdwallpapers.org/download/the-cat-and-the-butterfly_477645/1920x1080/" alt="" /></SwiperSlide>
         <SwiperSlide><img  src="https://uhdwallpapers.org/download/the-cat-and-the-butterfly_477645/1920x1080/" alt="" /></SwiperSlide>
         <SwiperSlide><img  src="https://uhdwallpapers.org/download/the-cat-and-the-butterfly_477645/1920x1080/" alt="" /></SwiperSlide>

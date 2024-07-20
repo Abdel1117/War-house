@@ -1,4 +1,4 @@
-import { useState, useEffect ,useContext } from 'react'
+import { useEffect ,useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Accueil from "./pages/Accueil/Accueil.tsx"
 import Login from './pages/Login/Login.tsx'
@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer.tsx"
 import { themeContext } from "./context/ThemeContext.tsx"
 
 function App() {
-  const { theme } = useContext(themeContext);
+  const { theme  } = useContext(themeContext);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
     <Header />
-      <main className='min-h-[100vh] bg-[#f5f5f5] dark:bg-[#252525]'>
+      <main className='min-h-[100vh] bg-[#FDFCFA] dark:bg-[#252525]'>
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/login" element={<Login />} />

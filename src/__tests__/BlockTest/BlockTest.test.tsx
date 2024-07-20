@@ -15,6 +15,8 @@ it('should render the Block component with the correct props', () => {
         title={"Notre site"}
         text={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quibusdam quia, architecto similique alias, harum debitis non tempora porro asperiores explicabo vel recusandae voluptates dignissimos mollitia saepe sequi tempore quos hic? Aliquid, consequuntur? Laborum quos eius ipsa ea consequuntur repudiandae."}
         callToActionMessage={"Cliquer ici"}
+        imageOrder={1}
+        SpeechOrder={2}
         actionButton={mockFunction} 
       />
     );
