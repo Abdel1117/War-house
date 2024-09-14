@@ -31,7 +31,7 @@ export const Article : React.FC<ArticleProps>= ({flexOption = "xl:flex-row", url
     }
     </div>
         
-        <div className={`${flexOption === "flex-row" ? "ml-8 my-auto" : "mt-4"}`}>
+        <div className={`${flexOption === "flex-row" ? "ml-8 my-auto" : "lg:mt-4"}`}>
             <div className=' flex justify-between '>
                 <p className='dark:text-white flex items-center'><LiaUser  style={{
                     marginRight:"2px ",

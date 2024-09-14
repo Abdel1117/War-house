@@ -12,6 +12,7 @@ import { TfiUser } from "react-icons/tfi";
 import { useContext } from "react"
 import { themeContext } from "../../context/ThemeContext"
 import { ArticleBlock } from "../../components/ArticleBlock/ArticleBlock"
+import { CarouselExpo } from "../../components/CarouselProfil/CarouselProfil"
 
 const Accueil : React.FC = () => {
   const { theme } = useContext(themeContext);
@@ -20,6 +21,8 @@ const Accueil : React.FC = () => {
   const myFunction = () => {
     navigate("/inscription")
   }
+
+  /* Icônes Array */
   const imageForFirstBlockIcons : JSX.Element[] = [
     <BsDice5 color={`${theme == "light"  ? "black" :  "white"}`}   size={70} />,
     <GiTabletopPlayers color={`${theme == "light"  ? "black" :  "white"}`}   size={70} />,
@@ -29,6 +32,14 @@ const Accueil : React.FC = () => {
     <TfiUser color={`${theme == "light"  ? "black" :  "white"}`}  size={70} />
   ]
 
+  const profilImages : string[] = [
+    "https://via.placeholder.com/250x250",
+    "https://via.placeholder.com/250x250",
+    "https://via.placeholder.com/250x250",
+    "https://via.placeholder.com/250x250",
+    "https://via.placeholder.com/250x250",
+    "https://via.placeholder.com/250x250"
+  ]
 
   return (
     <section data-testid="HomeApp"  className=''>
@@ -43,8 +54,9 @@ const Accueil : React.FC = () => {
           SpeechOrder={2}
           actionButton={myFunction} 
       />
-      <IconsBlock  arrayImage={imageForFirstBlockIcons} />
+      <IconsBlock  arrayImage={imageForFirstBlockIcons} Titre="Mon Titre" />
       <ArticleBlock />
+      <CarouselExpo arrayImage={profilImages} Title="Nos utilisateurs témoignes" SecondTitle="C'est eux qui le disent"  />
       </section>
   )
 }
