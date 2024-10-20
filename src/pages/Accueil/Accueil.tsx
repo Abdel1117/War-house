@@ -13,6 +13,7 @@ import { useContext } from "react"
 import { themeContext } from "../../context/ThemeContext"
 import { ArticleBlock } from "../../components/ArticleBlock/ArticleBlock"
 import { CarouselExpo } from "../../components/CarouselProfil/CarouselProfil"
+import { Banner } from "../../components/Banner/Banner"
 
 const Accueil : React.FC = () => {
   const { theme } = useContext(themeContext);
@@ -57,6 +58,12 @@ const Accueil : React.FC = () => {
       <IconsBlock  arrayImage={imageForFirstBlockIcons} Titre="Mon Titre" />
       <ArticleBlock />
       <CarouselExpo arrayImage={profilImages} Title="Nos utilisateurs témoignes" SecondTitle="C'est eux qui le disent"  />
+      <Banner image={Wargame}
+imageDes={"Mon image"}
+title={"Notre site"}
+text={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quibusdam quia, architecto similique alias, harum debitis non tempora porro asperiores explicabo vel recusandae voluptates dignissimos mollitia saepe sequi tempore quos hic? Asliquid, consequuntur? Laborum quos eius ipsa ea consequuntur repudiandae."}
+flexDirection={"row"} />
+      
       </section>
   )
 }
