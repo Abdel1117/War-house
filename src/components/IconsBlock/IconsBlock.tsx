@@ -6,6 +6,7 @@ interface IconsBlockProps {
 export const IconsBlock : React.FC<IconsBlockProps> = ({arrayImage, Titre = "Mon Titre"}) => {
   return (
       <section className="p-1 sm:p-5 lg:p-10 xl:p-40 bg-[#f1f1f1] dark:bg-[#404040]  mx-auto relative">
+
         <div className="mt-12 lg:mt-0 lg:absolute lg:top-12 flex items-end ">
           <h2 className="dark:text-white text-2xl">Nos services</h2>
           <span className="h-[2px] w-[200px] bg-green-500 mb-3 ml-4"></span>
@@ -23,7 +24,7 @@ export const IconsBlock : React.FC<IconsBlockProps> = ({arrayImage, Titre = "Mon
                   </div> 
                   <div className="mr-auto my-2">
                     <h2 className="dark:text-[#F6F6F6] text-justify">
-                     {Titre}
+                      {Titre}
                     </h2>
                   </div>
                   <div>

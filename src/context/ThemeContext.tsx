@@ -1,11 +1,13 @@
-import { ReactNode, createContext, useEffect, useState } from "react"
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 interface ThemeContextType {
-    theme: string;
-    setTheme: (theme: string) => void;
-    toggleTheme: () => void;
+  theme: string;
+  setTheme: (theme: string) => void;
+  toggleTheme: () => void;
 }
-export const themeContext = createContext<ThemeContextType | undefined>(undefined)
+export const themeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
 
 /**
  * Propaging the value of the theme to display Light or Dark mode
@@ -15,30 +17,27 @@ export const themeContext = createContext<ThemeContextType | undefined>(undefine
  */
 
 interface MyComponentsProps {
-    children : ReactNode;
+  children: ReactNode;
 }
 
-export const ThemeProvider = ({ children }: MyComponentsProps ) : JSX.Element => {
+export const ThemeProvider = ({ children }: MyComponentsProps): JSX.Element => {
+  const initalState: string = localStorage.getItem("theme") || "light";
 
-    const initalState : string = localStorage.getItem("theme") || "light";
+  const [theme, setTheme] = useState<string>(initalState);
 
-    const [theme, setTheme] = useState<string>(initalState)
+  const toggleTheme = () => {
+    const newTheme: string = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
+  };
 
-     const toggleTheme = () => {
-        const newTheme : string = theme === "light" ? "dark" : "light"; 
-        localStorage.setItem("theme", newTheme)
-        setTheme(newTheme)
-    }
+  useEffect(() => {
+    setTheme(initalState);
+  }, [initalState]);
 
-    useEffect(() => {
-        setTheme(initalState)
-       
-    }, [ initalState])
-
-    return (
-        <themeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-            {children}
-        </themeContext.Provider>
-    )
-}
-
+  return (
+    <themeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+      {children}
+    </themeContext.Provider>
+  );
+};

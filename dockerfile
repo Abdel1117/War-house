@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR /app
+WORKDIR /war_house_front
 
 COPY package*.json ./
 
@@ -8,4 +8,4 @@ COPY . .
 
 EXPOSE 5173
 
-CMD npm install && npm run dev
+CMD npm install --legacy-peer-deps && npm run dev
