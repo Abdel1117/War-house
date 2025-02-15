@@ -2,7 +2,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import Accueil from "../../pages/Accueil/Accueil";
-import { useAppSelector } from "../../app/hooks";
 
 // On mocke le hook useThemeContext
 vi.mock("../../context/useThemeContext", () => {
