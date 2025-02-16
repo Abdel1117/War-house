@@ -30,6 +30,21 @@ jobs:
           name: Build de l'application
           command: npm run build
 
+      - run:
+          name: Trigger CI/CD Pipeline After Successful Tests
+          command: |
+              if [ "$CIRCLE_BRANCH" = "dev" ]; then
+                curl -X POST https://circleci.com/api/v2/project/gh/Abdel1117/war_house_ci/pipeline \
+                -H "Circle-Token: $CIRCLE_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d '{"branch": "dev"}'
+              elif [ "$CIRCLE_BRANCH" = "prod" ]; then
+                curl -X POST https://circleci.com/api/v2/project/gh/Abdel1117/war_house_ci/pipeline \
+                -H "Circle-Token: $CIRCLE_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d '{"branch": "prod"}'
+              fi
+
 workflows:
   version: 2
   build_and_test:
