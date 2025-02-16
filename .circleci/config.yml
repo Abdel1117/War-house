@@ -25,7 +25,11 @@ jobs:
       - run:
           name: Exécution des tests unitaires
           command: npm test
-    
+
+      - run:
+          name: Build de l'application
+          command: npm run build
+
 workflows:
   version: 2
   build_and_test:
