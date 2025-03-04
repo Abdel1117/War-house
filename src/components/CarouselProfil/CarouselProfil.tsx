@@ -21,7 +21,7 @@ export const CarouselExpo: React.FC<CarouselExpo> = ({
         <h2 className="dark:text-white text-2xl">{Title}</h2>
         <span className="h-[2px] w-[200px] bg-green-500 mb-3 ml-4"></span>
       </div>
-      <div className="mb-6 lg:mb-0 ">
+      <div className="mb-6 lg:mb-0">
         <h3 className="dark:text-white text-3xl  lg:absolute lg:top-20 font-semibold">
           {SecondTitle}
         </h3>

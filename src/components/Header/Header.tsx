@@ -31,7 +31,7 @@ const Header = () => {
               <div>
                 <a
                   onClick={() => navigate("/")}
-                  className="flex items-center py-5 px-2 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900"
+                  className="flex items-center py-5 px-2 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900 cursor-pointer"
                 >
                   <svg
                     className="h-6 w-6 mr-1 text-blue-400"
@@ -55,13 +55,13 @@ const Header = () => {
               <div className="hidden md:flex items-center space-x-1">
                 <a
                   onClick={() => navigate("/")}
-                  className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900"
+                  className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
                   Features
                 </a>
                 <a
                   onClick={() => navigate("/")}
-                  className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900"
+                  className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
                   Pricing
                 </a>
@@ -72,7 +72,7 @@ const Header = () => {
             <div className="hidden md:flex items-center space-x-1">
               <a
                 onClick={() => navigate("/")}
-                className="mr-5 mt-2  text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900"
+                className="mr-5 mt-2  text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
               >
                 <FaRegCircleUser size={20} />
               </a>
@@ -108,13 +108,13 @@ const Header = () => {
           <div className="p-5 md:hidden transition-all duration-150 ease-in-out">
             <a
               onClick={() => navigate("/")}
-              className="block py-2 px-4 text-sm text-white"
+              className="block py-2 px-4 text-sm text-white  cursor-pointer"
             >
               Features
             </a>
             <a
               onClick={() => navigate("/")}
-              className="block py-2 px-4 text-sm text-white"
+              className="block py-2 px-4 text-sm text-white  cursor-pointer"
             >
               Pricing
             </a>
