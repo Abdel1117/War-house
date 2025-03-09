@@ -53,12 +53,12 @@ const Accueil: React.FC = () => {
   ];
 
   const profilImages: string[] = [
-    "https://via.placeholder.com/250x250",
-    "https://via.placeholder.com/250x250",
-    "https://via.placeholder.com/250x250",
-    "https://via.placeholder.com/250x250",
-    "https://via.placeholder.com/250x250",
-    "https://via.placeholder.com/250x250",
+    "https://images.sftcdn.net/images/t_app-icon-s/p/c34c15bf-054c-4287-8c2c-73cef14107c2/3273691428/boys-dp-boy-profile-pictures-logo",
+    "https://images.sftcdn.net/images/t_app-icon-s/p/c34c15bf-054c-4287-8c2c-73cef14107c2/3273691428/boys-dp-boy-profile-pictures-logo",
+    "https://images.sftcdn.net/images/t_app-icon-s/p/c34c15bf-054c-4287-8c2c-73cef14107c2/3273691428/boys-dp-boy-profile-pictures-logo",
+    "https://images.sftcdn.net/images/t_app-icon-s/p/c34c15bf-054c-4287-8c2c-73cef14107c2/3273691428/boys-dp-boy-profile-pictures-logo",
+    "https://images.sftcdn.net/images/t_app-icon-s/p/c34c15bf-054c-4287-8c2c-73cef14107c2/3273691428/boys-dp-boy-profile-pictures-logo",
+    "https://images.sftcdn.net/images/t_app-icon-s/p/c34c15bf-054c-4287-8c2c-73cef14107c2/3273691428/boys-dp-boy-profile-pictures-logo",
   ];
 
   return (

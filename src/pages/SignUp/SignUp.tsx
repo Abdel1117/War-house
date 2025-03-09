@@ -1,5 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useGetCityHook } from "../../hooks/usegetCityHook/useGetCityHook";
+import { useGetCountry } from "../../hooks/useGetCountry/useGetCountry";
 
 interface formDataType {
   full_name: string;
@@ -17,6 +19,16 @@ export const SignUp = () => {
     city: "",
     country: "",
   });
+  const {
+    countries,
+    loading: asLoadingCountrie,
+    error: errorCountrie,
+  } = useGetCountry();
+  const {
+    cities,
+    loading: asLoadingCities,
+    error: errorCities,
+  } = useGetCityHook(formData?.country);
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -37,7 +49,7 @@ export const SignUp = () => {
 
               <div className="lg:col-span-2">
                 <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                  <div className="md:col-span-5">
+                  <div className="md:col-span-12">
                     <label className="dark:text-white" htmlFor="full_name">
                       Full Name
                     </label>
@@ -51,7 +63,7 @@ export const SignUp = () => {
                     />
                   </div>
 
-                  <div className="md:col-span-5">
+                  <div className="md:col-span-12">
                     <label className="dark:text-white" htmlFor="email">
                       Email Address
                     </label>
@@ -65,82 +77,52 @@ export const SignUp = () => {
                       placeholder="email@domain.com"
                     />
                   </div>
-
-                  <div className="md:col-span-3">
-                    <label className="dark:text-white" htmlFor="address">
-                      Address / Street
-                    </label>
-                    <input
-                      onChange={(e) => handleChange(e)}
-                      type="text"
-                      name="address"
-                      id="address"
-                      className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      value={formData.address}
-                      placeholder=""
-                    />
-                  </div>
-
-                  <div className="md:col-span-2">
+                  <div className="md:col-span-12">
                     <label className="dark:text-white" htmlFor="city">
-                      City
+                      Pays
                     </label>
-                    <input
+                    <select
+                      name="country"
                       onChange={(e) => handleChange(e)}
-                      type="text"
-                      name="city"
-                      id="city"
-                      className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      value={formData.city}
-                      placeholder=""
-                    />
+                      id="countries"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-pointer"
+                    >
+                      {asLoadingCountrie ? (
+                        <option>Loading...</option>
+                      ) : (
+                        countries?.map((countrie: any, id: number) => (
+                          <option key={id} value={countrie.name}>
+                            {countrie.name_fr}
+                          </option>
+                        ))
+                      )}
+                    </select>
                   </div>
-
-                  <div className="md:col-span-2">
-                    <label className="dark:text-white" htmlFor="country">
-                      Country / region
+                  <div className="md:col-span-12">
+                    <label className="dark:text-white" htmlFor="city">
+                      Ville
                     </label>
-                    <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
-                      <input
-                        onChange={(e) => handleChange(e)}
-                        name="country"
-                        id="country"
-                        placeholder="Country"
-                        className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
-                        value={formData.country}
-                      />
-                      <button className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">
-                        <svg
-                          className="w-4 h-4 mx-2 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="18" y1="6" x2="6" y2="18"></line>
-                          <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                      </button>
-                      <button className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600">
-                        <svg
-                          className="w-4 h-4 mx-2 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <polyline points="18 15 12 9 6 15"></polyline>
-                        </svg>
-                      </button>
-                    </div>
+                    <select
+                      id="countries"
+                      name="city"
+                      onChange={(e) => handleChange(e)}
+                      disabled={formData.country.length === 0 ? true : false}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-pointer"
+                    >
+                      {asLoadingCities && cities != null ? (
+                        <option>Loading...</option>
+                      ) : (
+                        cities?.map((city: any, id: number) => (
+                          <option key={id} value={city}>
+                            {city}
+                          </option>
+                        ))
+                      )}
+                    </select>
                   </div>
 
-                  <div className="md:col-span-5 text-right">
-                    <div className="flex items-center space-x-4 justify-end">
+                  <div className="md:col-span-5 text-left">
+                    <div className="flex items-center space-x-4 justify-start mt-5">
                       <button className=" flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Envoyer
                       </button>

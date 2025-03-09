@@ -6,7 +6,9 @@ import { FaRegCircleUser } from "react-icons/fa6";
 const Header = () => {
   const [toogle, setToogle] = useState<boolean>(false);
   const navigate = useNavigate();
-  const { value, loading, error } = useAppSelector((state) => state.user);
+  const { user, isAuthenticated, loading, error } = useAppSelector(
+    (state) => state.auth
+  );
   const resetToogle = () => {
     const innerWidth = window.innerWidth;
 
@@ -57,25 +59,34 @@ const Header = () => {
                   onClick={() => navigate("/")}
                   className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
-                  Features
+                  Accueil
                 </a>
                 <a
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/inscription")}
                   className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
-                  Pricing
+                  Inscription
                 </a>
               </div>
             </div>
 
             {/*  <!-- secondary nav --> */}
             <div className="hidden md:flex items-center space-x-1">
-              <a
-                onClick={() => navigate("/")}
-                className="mr-5 mt-2  text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
-              >
-                <FaRegCircleUser size={20} />
-              </a>
+              {isAuthenticated ? (
+                <a
+                  onClick={() => navigate("/userDashBoard")}
+                  className="mr-5 mt-2  text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
+                >
+                  <FaRegCircleUser size={20} />
+                </a>
+              ) : (
+                <a
+                  onClick={() => navigate("/login")}
+                  className="mr-5 mt-2 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
+                >
+                  Login
+                </a>
+              )}
 
               <ThemeButton />
             </div>
@@ -110,13 +121,13 @@ const Header = () => {
               onClick={() => navigate("/")}
               className="block py-2 px-4 text-sm text-white  cursor-pointer"
             >
-              Features
+              Accueil
             </a>
             <a
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/login")}
               className="block py-2 px-4 text-sm text-white  cursor-pointer"
             >
-              Pricing
+              Login
             </a>
           </div>
         )}

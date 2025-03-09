@@ -27,7 +27,21 @@ export const CarouselExpo: React.FC<CarouselExpo> = ({
         </h3>
       </div>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
         spaceBetween={30}
         autoplay={{
           delay: 2500,
@@ -48,7 +62,7 @@ export const CarouselExpo: React.FC<CarouselExpo> = ({
             <img
               className="!w-[150px] !h-[150px] rounded-full mx-auto mt-6 mb-4 "
               src={val}
-              alt="Image de profil "
+              alt="Image de profil"
             />
             <div className="p-4 text-center">
               <h2 className="my-4 text-xl">Pseudo </h2>

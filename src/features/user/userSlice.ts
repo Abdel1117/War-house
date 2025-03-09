@@ -64,7 +64,7 @@ export const fetchUser = createAsyncThunk(
         .addCase(fetchUser.rejected, (state) => {
           state.loading = false;
           state.error = true;
-        });
+        })
     },
   });
   
