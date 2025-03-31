@@ -1,14 +1,16 @@
 import { useEffect, useContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Accueil from "./pages/Accueil/Accueil.tsx";
 import Login from "./pages/Login/Login.tsx";
 import Header from "./components/Header/Header.tsx";
 import Footer from "./components/Footer/Footer.tsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.tsx";
 import { themeContext } from "./context/ThemeContext.tsx";
 import { SignUp } from "./pages/SignUp/SignUp.tsx";
 
 function App() {
   const theme = useContext(themeContext);
+  const { pathName } = useLocation();
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -20,6 +22,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <main className="min-h-[100vh] bg-[#FDFCFA] dark:bg-[#252525]">
         <Routes>
           <Route path="/" element={<Accueil />} />
