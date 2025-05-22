@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer.tsx";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.tsx";
 import { themeContext } from "./context/ThemeContext.tsx";
 import { SignUp } from "./pages/SignUp/SignUp.tsx";
+import { Galerie } from "./pages/Galerie/Galerie.tsx";
 
 function App() {
   const theme = useContext(themeContext);
@@ -26,6 +27,7 @@ function App() {
       <main className="min-h-[100vh] bg-[#FDFCFA] dark:bg-[#252525]">
         <Routes>
           <Route path="/" element={<Accueil />} />
+          <Route path="/galerie" element={<Galerie />} />
           <Route path="/inscription" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>

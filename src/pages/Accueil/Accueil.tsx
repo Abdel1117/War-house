@@ -62,7 +62,7 @@ const Accueil: React.FC = () => {
   ];
 
   return (
-    <section data-testid="HomeApp" className="">
+    <section data-testid="HomeApp">
       <Carousel />
       <>
         <h2>Users</h2>

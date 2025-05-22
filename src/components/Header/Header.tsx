@@ -54,7 +54,7 @@ const Header = () => {
               </div>
 
               {/*  <!-- primary nav --> */}
-              <div className="hidden md:flex items-center space-x-1">
+              <div className="hidden md:flex items-center">
                 <a
                   onClick={() => navigate("/")}
                   className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
@@ -66,6 +66,12 @@ const Header = () => {
                   className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
                   Inscription
+                </a>
+                <a
+                  onClick={() => navigate("/galerie")}
+                  className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
+                >
+                  Galerie
                 </a>
               </div>
             </div>
@@ -122,6 +128,18 @@ const Header = () => {
               className="block py-2 px-4 text-sm text-white  cursor-pointer"
             >
               Accueil
+            </a>
+            <a
+              onClick={() => navigate("/inscription")}
+              className="block py-2 px-4 text-sm text-white  cursor-pointer"
+            >
+              Inscription
+            </a>
+            <a
+              onClick={() => navigate("/galerie")}
+              className="block py-2 px-4 text-sm text-white  cursor-pointer"
+            >
+              Galerie
             </a>
             <a
               onClick={() => navigate("/login")}
