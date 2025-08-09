@@ -21,7 +21,6 @@ const Accueil: React.FC = () => {
   const { theme } = useThemeContext();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { value, loading, error } = useAppSelector((state) => state.user);
 
   const myFunction = () => {
     navigate("/inscription");
@@ -64,14 +63,7 @@ const Accueil: React.FC = () => {
   return (
     <section data-testid="HomeApp">
       <Carousel />
-      <>
-        <h2>Users</h2>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          value?.map((user: any) => <p>{user.pseudo}</p>)
-        )}
-      </>
+
       <Block
         image={Wargame}
         textAlt={"Mon image"}
