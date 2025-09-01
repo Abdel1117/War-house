@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Accueil from "./pages/Accueil/Accueil.tsx";
 import Login from "./pages/Login/Login.tsx";
 import Header from "./components/Header/Header.tsx";
@@ -11,7 +11,6 @@ import { Galerie } from "./pages/Galerie/Galerie.tsx";
 
 function App() {
   const theme = useContext(themeContext);
-  const { pathName } = useLocation();
 
   useEffect(() => {
     const root = window.document.documentElement;

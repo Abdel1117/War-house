@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+
+      backgroundImage: {
+        hero: `url(./src/assets/images/War_house_images.jpg)`,
+      },
       keyframes: {
         'height-expand': {
           '0%': { height: '0px' },
@@ -14,10 +19,12 @@ export default {
     },
     animation: {
       'height-expand': 'height-expand 0.5s ease-out',
+      'width-0-100': 'width-0-100 0.5s ease-out',
       },
+   
     },
+   
   },
   plugins: [],
   darkMode: "class"
 }
-
