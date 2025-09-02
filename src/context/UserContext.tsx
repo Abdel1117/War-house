@@ -29,8 +29,12 @@ export const UserProvider = ({
   };
   useEffect(() => {
     checkToken().then((user) => {
-      setUser(user);
-      setLogged(true);
+      if (!user) {
+        logout();
+      } else {
+        setUser(user);
+        setLogged(true);
+      }
     });
   }, []);
   return (
