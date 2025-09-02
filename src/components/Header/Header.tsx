@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 import { ThemeButton } from "../ThemeButton/ThemeButton";
 import { FaRegCircleUser } from "react-icons/fa6";
+import { useUserContext } from "../../context/useUserContext";
 const Header = () => {
   const [toogle, setToogle] = useState<boolean>(false);
   const navigate = useNavigate();
-  const { user, isAuthenticated, loading, error } = useAppSelector(
-    (state) => state.auth
-  );
+  const { logged } = useUserContext();
   const resetToogle = () => {
     const innerWidth = window.innerWidth;
 
@@ -61,12 +60,7 @@ const Header = () => {
                 >
                   Accueil
                 </a>
-                <a
-                  onClick={() => navigate("/inscription")}
-                  className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
-                >
-                  Inscription
-                </a>
+
                 <a
                   onClick={() => navigate("/galerie")}
                   className="mr-5 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
@@ -77,21 +71,29 @@ const Header = () => {
             </div>
 
             {/*  <!-- secondary nav --> */}
-            <div className="hidden md:flex items-center space-x-1">
-              {isAuthenticated ? (
+            <div className="hidden md:flex items-center space-x-4">
+              {logged ? (
                 <a
                   onClick={() => navigate("/userDashBoard")}
                   className="mr-5 mt-2  text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
-                  <FaRegCircleUser size={20} />
+                  <FaRegCircleUser size={25} />
                 </a>
               ) : (
-                <a
-                  onClick={() => navigate("/login")}
-                  className="mr-5 mt-2 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
-                >
-                  Login
-                </a>
+                <>
+                  <a
+                    onClick={() => navigate("/inscription")}
+                    className="mr-5 mt-2 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
+                  >
+                    Inscription
+                  </a>
+                  <a
+                    onClick={() => navigate("/login")}
+                    className="mr-5 mt-2 text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
+                  >
+                    Login
+                  </a>
+                </>
               )}
 
               <ThemeButton />

@@ -11,7 +11,7 @@ export const ThemeButton = () => {
           onClick={() => {
             toggleTheme();
           }}
-          size={20}
+          size={25}
         />
       ) : (
         <IoMoonOutline
@@ -19,7 +19,7 @@ export const ThemeButton = () => {
           onClick={() => {
             toggleTheme();
           }}
-          size={20}
+          size={25}
         />
       )}
     </>
