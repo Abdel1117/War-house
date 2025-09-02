@@ -13,22 +13,16 @@ import { TfiUser } from "react-icons/tfi";
 import { ArticleBlock } from "../../components/ArticleBlock/ArticleBlock";
 import { CarouselExpo } from "../../components/CarouselProfil/CarouselProfil";
 import useThemeContext from "../../context/useThemeContext";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { fetchUser } from "../../features/user/userSlice";
 
 const Accueil: React.FC = () => {
   const { theme } = useThemeContext();
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
   const myFunction = () => {
     navigate("/inscription");
   };
 
-  useEffect(() => {
-    dispatch(fetchUser());
-  }, []);
+
   /* Icônes Array */
   const imageForFirstBlockIcons: JSX.Element[] = [
     <BsDice5 color={`${theme == "light" ? "black" : "white"}`} size={70} />,
