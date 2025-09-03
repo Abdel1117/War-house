@@ -1,3 +1,5 @@
+import { User } from "../../types/userType/userType";
+
 const apiUrl: string = import.meta.env.VITE_API_URL;
 
 /**
@@ -19,9 +21,9 @@ export const getToken = (key: string): string | null => {
 
 /**
  * Vérifie auprès du backend si le token est toujours valide.
- * @returns La réponse du fetch ou lance une erreur.
+ * @returns Les données utilisateur ou null si invalide.
  */
-export const checkToken = async (): Promise<Response> => {
+export const checkToken = async (): Promise<User | null> => {
   try {
     const token = sessionStorage.getItem("token");
     if (token !== null) {
@@ -31,11 +33,16 @@ export const checkToken = async (): Promise<Response> => {
           Authorization: `Bearer ${token}`,
         },
       });
-      return request.json();
+      
+      if (request.ok) {
+        return await request.json();
+      }
+      return null;
     }
+    return null;
   } catch (err) {
     console.error("Erreur lors de la vérification du token :", err);
-    throw err;
+    return null;
   }
 };
 

@@ -8,6 +8,8 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop.tsx";
 import { themeContext } from "./context/ThemeContext.tsx";
 import { SignUp } from "./pages/SignUp/SignUp.tsx";
 import { Galerie } from "./pages/Galerie/Galerie.tsx";
+import { Profile } from "./pages/Profile/Profile.tsx";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
 
 function App() {
   const theme = useContext(themeContext);
@@ -29,6 +31,14 @@ function App() {
           <Route path="/galerie" element={<Galerie />} />
           <Route path="/inscription" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />

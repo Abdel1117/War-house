@@ -24,7 +24,7 @@ const Header = () => {
     /* navbar goes here
      */
     <>
-      <nav className="bg-gray-100 dark:bg-gray-800 ">
+      <nav className="bg-white dark:bg-gray-900 ">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between">
             <div className="flex space-x-4">
@@ -74,7 +74,7 @@ const Header = () => {
             <div className="hidden md:flex items-center space-x-4">
               {logged ? (
                 <a
-                  onClick={() => navigate("/userDashBoard")}
+                  onClick={() => navigate("/profile")}
                   className="mr-5 mt-2  text-gray-700 dark:text-white hover:dark:text-white hover:text-gray-900  cursor-pointer"
                 >
                   <FaRegCircleUser size={25} />
