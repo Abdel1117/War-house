@@ -9,7 +9,7 @@ export default {
     extend: {
 
       backgroundImage: {
-        hero: `url(./src/assets/images/War_house_images.jpg)`,
+        hero: `url(../src/assets/images/War_house_images.jpg)`,
       },
       keyframes: {
         'height-expand': {

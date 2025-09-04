@@ -1,15 +1,22 @@
 interface ToastProps {
   type: "success" | "error" | "info" | "warning";
-  message: string;
-  duration: number;
   position:
     | "top-0 left-0"
     | "top-0 right-0"
     | "bottom-0 left-0"
     | "bottom-0 right-0";
+  message: string;
+  duration: number;
+  onClose: () => void;
 }
 
-export const Toast = ({ type, message, duration, position }: ToastProps) => {
+export const Toast = ({
+  onClose = () => {},
+  type,
+  message,
+  duration,
+  position,
+}: ToastProps) => {
   const bgColor = (() => {
     switch (type) {
       case "success":
@@ -38,6 +45,9 @@ export const Toast = ({ type, message, duration, position }: ToastProps) => {
         {message}
         <div className="ms-auto">
           <button
+            onClick={() => {
+              onClose();
+            }}
             type="button"
             className="inline-flex  justify-center items-center size-5 rounded-lg text-gray-800 opacity-50 hover:opacity-100 focus:outline-hidden focus:opacity-100 dark:text-white"
             aria-label="Close"

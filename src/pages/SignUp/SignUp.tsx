@@ -186,10 +186,14 @@ export const SignUp = () => {
         <Toast
           type={"success"}
           message={
-            "Inscription réussie ! Vous allez être redirigé vers la page d'accueil."
+            "Inscription réussie ! Vous allez être redirigé vers la page de connexion."
           }
           duration={3000}
           position={"top-0 right-0"}
+          onClose={() => {
+            setSuccess(false);
+            navigate("/inscription");
+          }}
         />
       )}
 
@@ -201,6 +205,9 @@ export const SignUp = () => {
           }
           duration={3000}
           position={"top-0 right-0"}
+          onClose={() => {
+            setFail(false);
+          }}
         />
       )}
       {loading ? (

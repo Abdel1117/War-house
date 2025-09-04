@@ -39,8 +39,8 @@ export const Profile: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
+    <div className=" mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
         {/* En-tête de la page */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -127,6 +127,7 @@ export const Profile: React.FC = () => {
           type={toastType}
           duration={3000}
           position="top-0 right-0"
+          onClose={() => setToastMessage("")}
         />
       )}
     </div>
