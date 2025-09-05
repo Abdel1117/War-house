@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useAppSelector } from "../../app/hooks";
 import { ThemeButton } from "../ThemeButton/ThemeButton";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { useUserContext } from "../../context/useUserContext";
