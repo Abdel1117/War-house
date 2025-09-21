@@ -18,7 +18,7 @@ export const FilterBar = ({
   ResetAction,
 }: FilterBarProps) => {
   return (
-    <div className=" w-full bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+    <div className="w-full bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
       <div className="flex justify-center items-center space-x-4 overflow-x-auto h-full">
         {options?.map((option, index) => (
           <SelectComponents
@@ -31,17 +31,13 @@ export const FilterBar = ({
         ))}
         <div className="flex space-x-4 items-baseline">
           <button
-            onClick={() => {
-              filterAction;
-            }}
+            onClick={filterAction}
             className="px-4 py-3 bg-blue-500 text-white rounded-lg"
           >
             Filtrer
           </button>
           <button
-            onClick={() => {
-              ResetAction;
-            }}
+            onClick={ResetAction}
             className="px-4 py-3 bg-gray-300 text-gray-800 rounded-lg"
           >
             Réinitialiser
