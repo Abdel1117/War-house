@@ -18,7 +18,7 @@ export const FilterBar = ({
   ResetAction,
 }: FilterBarProps) => {
   return (
-    <div className="w-full bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+    <div className="w-full bg-gray-[#F3F4F6] dark:bg-gray-800 p-4 rounded-lg shadow-md">
       <div className="flex justify-center items-center space-x-4 overflow-x-auto h-full">
         {options?.map((option, index) => (
           <SelectComponents

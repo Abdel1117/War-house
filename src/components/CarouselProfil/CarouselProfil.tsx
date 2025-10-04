@@ -17,12 +17,12 @@ export const CarouselExpo: React.FC<CarouselExpo> = ({
 }) => {
   return (
     <section className=" p-1 sm:p-5 lg:p-10 xl:p-40 bg-[#f1f1f1] dark:bg-[#404040]  mx-auto relative ">
-      <div className="mt-12 lg:mt-0 lg:absolute lg:top-12 flex items-end ">
-        <h2 className="dark:text-white text-2xl">{Title}</h2>
+      <div className="mb-5  flex items-end ">
+        <h2 className="dark:text-white text-xl lg:text-2xl">{Title}</h2>
         <span className="h-[2px] w-[200px] bg-green-500 mb-3 ml-4"></span>
       </div>
-      <div className="mb-6 lg:mb-0">
-        <h3 className="dark:text-white text-3xl  lg:absolute lg:top-20 font-semibold">
+      <div className="mb-5 xl:mb-10 ">
+        <h3 className="dark:text-white text-2xl lg:text-3xl  font-semibold">
           {SecondTitle}
         </h3>
       </div>
@@ -56,7 +56,7 @@ export const CarouselExpo: React.FC<CarouselExpo> = ({
       >
         {arrayImage.map((val, index) => (
           <SwiperSlide
-            className="!h-[500px] bg-slate-600 dark:bg-white rounded-md relative"
+            className="!h-[500px] bg-white dark:bg-[#303030] dark:text-white rounded-md relative mb-8"
             key={index}
           >
             <img

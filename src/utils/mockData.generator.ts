@@ -12,10 +12,10 @@ const categories = [
 
 const collections = ['Figurines, Décors', 'Jeux', 'Parties'];
 
-export const generateImages = (count: number): ImageData[] => {
+export const generateImages = (count: number, startId: number): ImageData[] => {
   return Array.from({ length: count }, (_, index) => ({
-    id: index + 1,
-    title: `Image ${index + 1}`,
+    id: startId + index,
+    title: `Image ${startId + index}`,
     resolution: `${Math.round(Math.random() * 2000 + 1000)}x${Math.round(
       Math.random() * 2000 + 1000
     )}`,
@@ -23,7 +23,7 @@ export const generateImages = (count: number): ImageData[] => {
     favorite: Math.round(Math.random() * 10),
     pegi18: Math.random() < 0.3,
     collection: collections[Math.floor(Math.random() * collections.length)],
-    src: `https://picsum.photos/300/200?random=${index + 1}`,
+    src: `https://picsum.photos/300/200?random=${startId + index}`,
   }));
 };
 

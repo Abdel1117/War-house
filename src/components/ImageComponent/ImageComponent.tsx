@@ -11,7 +11,7 @@ export const ImageComponent: React.FC<ImageDisplayProps> = ({
   const isPegi18 = pegi18 ? "border-4 border-yellow-500 rounded-xl" : "";
   return (
     <figure className={`relative group ${isPegi18}`}>
-      <a className="absolute -top-2 -right-2 hidden group-hover:block" href="">
+      <a className="absolute -top-2 -right-2 hidden group-hover:block" href="#">
         <GrFavorite className="text-2xl text-white bg-black rounded-full p-1 hover:text-red-400 transition-colors duration-200" />
       </a>
       <img

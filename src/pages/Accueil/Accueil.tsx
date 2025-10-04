@@ -22,7 +22,6 @@ const Accueil: React.FC = () => {
     navigate("/inscription");
   };
 
-
   /* Icônes Array */
   const imageForFirstBlockIcons: JSX.Element[] = [
     <BsDice5 color={`${theme == "light" ? "black" : "white"}`} size={70} />,
