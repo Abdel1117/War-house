@@ -78,7 +78,7 @@ const Login = () => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
-          }
+          },
         );
         if (response.ok) {
           const data = await response.json();
