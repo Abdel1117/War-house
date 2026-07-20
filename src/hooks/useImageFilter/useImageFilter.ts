@@ -23,8 +23,6 @@ export const useImageFilter = (initialImages: ImageData[], opts: UseImageFilterO
       : policyApplied;
 
     // Étape 3: trier
-    console.log(byCriteria)
-    console.log(sortKey)
     return sortImages(byCriteria, sortKey);
   }, [initialImages, canViewPegi18, filterCriteria, sortKey]);
 

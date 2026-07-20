@@ -6,7 +6,7 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 export const themeContext = createContext<ThemeContextType | undefined>(
-  undefined
+  undefined,
 );
 
 /**

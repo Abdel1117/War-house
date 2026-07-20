@@ -7,7 +7,10 @@ export default {
   ],
   theme: {
     extend: {
-
+      colors : {
+        greenlight : "#94db94",
+        bluelight : "#8cc"
+      },
       backgroundImage: {
         hero: `url(../src/assets/images/War_house_images.jpg)`,
       },

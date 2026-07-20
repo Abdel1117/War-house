@@ -1,0 +1,1 @@
+export type PurityType = "SFW" | "Sketchy" | "NSFW" | "Gore"

@@ -66,7 +66,7 @@ export const Galerie = () => {
   }
 
   return (
-    <section className="pb-4">
+    <section className="min-h-[100vh] pb-4">
       <h1 className="hidden text-4xl font-bold text-center">Galerie</h1>
 
       <div className="min-h-[100px] mb-6">
@@ -77,7 +77,7 @@ export const Galerie = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-2 xl:p-0">
         {filteredImages.length === 0 && !loading ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
