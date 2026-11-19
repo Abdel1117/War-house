@@ -11,6 +11,7 @@ import { Galerie } from "./pages/Galerie/Galerie.tsx";
 import { Image } from "./pages/Image/Image.tsx";
 import { Profile } from "./pages/Profile/Profile.tsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
+import { CookieBanner } from "./components/CookieBanner/CookieBanner.tsx";
 
 function App() {
   const theme = useContext(themeContext);
@@ -44,6 +45,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <CookieBanner />
     </>
   );
 }

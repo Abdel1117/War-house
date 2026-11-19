@@ -6,13 +6,16 @@ import store from "./app/store.ts";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "./context/ThemeContext.tsx";
 import { UserProvider } from "./context/UserContext.tsx";
+import { CookieConsentProvider } from "./context/CookieConsentContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Provider store={store}>
       <ThemeProvider>
         <UserProvider>
-          <App />
+          <CookieConsentProvider>
+            <App />
+          </CookieConsentProvider>
         </UserProvider>
       </ThemeProvider>
     </Provider>

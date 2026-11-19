@@ -1,6 +1,9 @@
 import { getCurrentYear } from "../../utils/Date/getDate";
+import useCookieConsentContext from "../../context/useCookieConsentContext";
 
 const Footer = () => {
+  const { openBanner } = useCookieConsentContext();
+
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
@@ -78,6 +81,15 @@ const Footer = () => {
                 <a href="#" className="hover:underline">
                   Terms &amp; Conditions
                 </a>
+              </li>
+              <li className="mb-4">
+                <button
+                  type="button"
+                  onClick={openBanner}
+                  className="hover:underline"
+                >
+                  Gérer les cookies
+                </button>
               </li>
             </ul>
           </div>

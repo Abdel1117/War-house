@@ -19,10 +19,15 @@ export default {
           '0%': { height: '0px' },
           '100%': { height: '200px' },
         },
+        'cookie-slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
     },
     animation: {
       'height-expand': 'height-expand 0.5s ease-out',
       'width-0-100': 'width-0-100 0.5s ease-out',
+      'cookie-slide-up': 'cookie-slide-up 0.3s cubic-bezier(0.23, 1, 0.32, 1)',
       },
    
     },
