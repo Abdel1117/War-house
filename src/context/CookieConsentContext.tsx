@@ -16,6 +16,7 @@ interface StoredConsent extends CookieConsent {
 
 interface CookieConsentContextType {
   /** null tant que l'utilisateur n'a pas fait de choix */
+  /* Choix obligatoire */
   consent: CookieConsent | null;
   isBannerOpen: boolean;
   acceptAll: () => void;

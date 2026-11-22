@@ -13,7 +13,7 @@ interface UserContextType {
 }
 
 export const UserContext = createContext<UserContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const UserProvider = ({
